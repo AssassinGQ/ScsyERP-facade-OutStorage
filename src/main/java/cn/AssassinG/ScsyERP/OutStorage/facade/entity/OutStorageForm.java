@@ -8,6 +8,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 import javax.persistence.Entity;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -47,6 +48,9 @@ public class OutStorageForm extends FormEntity {
 
     public OutStorageForm() {
         super();
+        this.DriveWorkers = new HashSet<>();
+        this.LiftWorkers = new HashSet<>();
+        this.Products = new HashSet<>();
     }
 
     public Long getProject() {
@@ -133,7 +137,10 @@ public class OutStorageForm extends FormEntity {
     }
 
     public void setDriveWorkers(Set<Long> driveWorkers) {
-        DriveWorkers = driveWorkers;
+        if(driveWorkers == null)
+            this.DriveWorkers = new HashSet<>();
+        else
+            DriveWorkers = driveWorkers;
     }
 
     public Set<Long> getLiftWorkers() {
@@ -141,7 +148,10 @@ public class OutStorageForm extends FormEntity {
     }
 
     public void setLiftWorkers(Set<Long> liftWorkers) {
-        LiftWorkers = liftWorkers;
+        if(liftWorkers == null)
+            this.LiftWorkers = new HashSet<>();
+        else
+            LiftWorkers = liftWorkers;
     }
 
     @JSONField(serialize = false)
@@ -196,7 +206,10 @@ public class OutStorageForm extends FormEntity {
     }
 
     public void setProducts(Set<Long> products) {
-        Products = products;
+        if(products == null)
+            Products = new HashSet<>();
+        else
+            Products = products;
     }
 
     public Double getRealOutStorageWeight() {

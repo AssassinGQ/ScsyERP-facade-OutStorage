@@ -29,8 +29,8 @@ public class OutStorageForm extends FormEntity {
     private Long PickWorker;
     @Valid(varType = Valid.VarType.Number)
     private Long Lister;
-    private Set<Long> DriveWorkers;
-    private Set<Long> LiftWorkers;
+    private Set<Long> DriveWorkers;//弃用，join查询warehouse中的，complete时也根据warehouse中的来
+    private Set<Long> LiftWorkers;//弃用
     private AccountStatus AccountStatus;
     @Valid(varType = Valid.VarType.Number, nullAble = true, maxValue = 9999)
     private Integer TotalAmount;

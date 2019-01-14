@@ -55,6 +55,7 @@ public class OutStorageForm extends FormEntity {
         this.OutStorageNumber = StringUtils.getRandomStr(15, StringUtils.StrType.NUMBER);
         this.OutStorageTime = new Date();
         this.AccountStatus = cn.AssassinG.ScsyERP.common.enums.AccountStatus.WRZ;
+        this.OutStorageStatus = OutStorageFormStatus.Workging;
     }
 
     public Long getProject() {

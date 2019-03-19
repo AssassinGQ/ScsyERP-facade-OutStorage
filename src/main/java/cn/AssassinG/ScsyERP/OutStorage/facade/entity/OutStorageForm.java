@@ -48,7 +48,6 @@ public class OutStorageForm extends FormEntity {
 
     public OutStorageForm() {
         super();
-        this.Products = new HashSet<>();
     }
 
     public Long getProject() {
